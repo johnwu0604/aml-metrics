@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+experiment_name: metrics
+code: . 
+command: python train.py
+environment: azureml:AzureML-pytorch-1.10-ubuntu18.04-py38-cuda11-gpu:17
+compute: None
+resources:
+  instance_count: 1
+  instance_type: Standard_NC6
+  properties:
+    ComputeSpecification:
+      Automatic: true
