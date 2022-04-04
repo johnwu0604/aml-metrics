@@ -7,14 +7,10 @@ for x in range(100):
     # Printing epoch to generate logs
     print('Epoch: {}'.format(x))
 
-    # Log an integer or float
-    mlflow.log_metric('accuracy', float(x/100))
-
-    # Log some text
-    mlflow.log_text('epoch', 'epoch {}'.format(x))
-
-    # Log a boolean
-    mlflow.log_metric('random_boolean', random.getrandbits(1))
+    # Log some metrics
+    mlflow.log_metric('accuracy', float(x/100 - random.uniform(0.005, 0.001)))
+    mlflow.log_metric('loss', float(random.uniform(100, 200) - x))
+    mlflow.log_metric('random_int', random.randrange(10))
 
     # sleep for some time period
     time.sleep(15)
