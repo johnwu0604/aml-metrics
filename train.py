@@ -14,7 +14,7 @@ for x in range(100):
     mlflow.log_text('epoch', 'epoch {}'.format(x))
 
     # Log a boolean
-    mlflow.log_metric('random_boolean', bool(random.getrandbits(1)))
+    mlflow.log_metric('random_boolean', random.getrandbits(1))
 
     # sleep for some time period
     time.sleep(15)
